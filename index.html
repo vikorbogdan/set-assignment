@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width", initial-scale=1.0">
+
+    <title>SET - A felismerés családi játéka</title>
+    <link rel="stylesheet" href="res/styles/slidercheckbox.css" />
+    <link rel="stylesheet" href="res/styles/fontfaces.css" />
+    <link rel="stylesheet" href="res/styles/style.css" />
+    <link rel="stylesheet" href="res/styles/buttonanim.css" />
+    <link rel="stylesheet" href="res/styles/tooltip.css" />
+
+    
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+
+    <style>
+      .paths {
+        fill: url(#striped-pattern);
+        stroke-width: 1.5px;
+      }
+      
+      .stripes {
+        stroke-width: 1;
+      }
+      </style>
+  </head>
+  <body>
+    <!--OVAL-->
+    <svg id="oval" width="110" height="56" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.64 51.08">
+      <defs>
+        <pattern id="green-pattern" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(90)">
+          <line x1="0" y="0" x2="0" y2="7" stroke="#70e632" stroke-width="4" />
+        </pattern>
+        <pattern id="red-pattern" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(90)">
+          <line x1="0" y="0" x2="0" y2="7" stroke="#FF387C" stroke-width="4" />
+        </pattern>
+        <pattern id="blue-pattern" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(90)">
+          <line x1="0" y="0" x2="0" y2="7" stroke="#387CFF" stroke-width="4" />
+        </pattern>
+          </defs>
+          <path class="paths" d="M107.14,25.58a25,25,0,0,1-25,25H25.54A25,25,0,0,1,25.54.5H82.11a25,25,0,0,1,25,25Z" />
+          </g>
+          </g>
+          </g>
+      </svg>
+      <!--DIAMOND-->
+      <svg id="diamond" width="110" height="56" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.94 57.35">
+          <defs>
+            <pattern id="green-pattern" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(90)">
+              <line x1="0" y="0" x2="0" y2="7" stroke="#70e632" stroke-width="4" />
+            </pattern>
+            <pattern id="red-pattern" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(90)">
+              <line x1="0" y="0" x2="0" y2="7" stroke="#FF387C" stroke-width="4" />
+            </pattern>
+            <pattern id="blue-pattern" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(90)">
+              <line x1="0" y="0" x2="0" y2="7" stroke="#387CFF" stroke-width="4" />
+            </pattern>
+          </defs>
+          <polygon class="paths" points="108.86 28.68 54.97 56.79 1.08 28.68 54.97 0.56 108.86 28.68" />
+      </svg>
+      <!--SQUIGGLE-->
+      <svg id="squiggle" width="110" height="56" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.95 49.73">
+          <defs>
+            <pattern id="green-pattern" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(90)">
+              <line x1="0" y="0" x2="0" y2="7" stroke="#70e632" stroke-width="4" />
+            </pattern>
+            <pattern id="red-pattern" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(90)">
+              <line x1="0" y="0" x2="0" y2="7" stroke="#FF387C" stroke-width="4" />
+            </pattern>
+            <pattern id="blue-pattern" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(90)">
+              <line x1="0" y="0" x2="0" y2="7" stroke="#387CFF" stroke-width="4" />
+            </pattern>
+          </defs>
+          <path class="paths"
+              d="M.53,32.34C1.33,41,2.77,49,11.42,49.23c3.4.09,4.27-1.36,10-5.22,1.88-1.28,15-7.62,26-3.45,2,.77,1.74,1,4.67,2.22a43.68,43.68,0,0,0,14.33,3c4.8.19,12.27.48,20-3.88,11-6.2,14-17.24,14.78-19A23.48,23.48,0,0,0,99.42,3.78C99.15,3.33,98,1.25,93.53.56c-3.89-.6-6.32,3.33-9.67,6C77.24,11.85,69.09,11.94,63.75,12c-9.62.11-9.7-4.09-24.55-7.23-8.78-1.85-15.66-3.2-22.89.12A26.64,26.64,0,0,0,5.2,14.9,29.81,29.81,0,0,0,.53,32.34Z" />
+      </svg>
+    <div id="container">
+      <!-- MENU STATE -->
+      <div class="state" id="menu-state">
+        <!--LEFT SIDE-->
+        <div class="menu-section no-select" id="menu-left">
+          <img id="menu-set-logo" src="res/svg/SET_logo.svg" />
+          <label class="switch">
+            <input id="menu-difficulty-switch" type="checkbox" />
+            <span class="slider round"></span>
+            <span id="checkbox-title"></span>
+          </label>
+          <div id="top-list-header">Top 10 kezdő</div>
+          <ul id="top-list">
+           <table>
+             <tr>
+               <td colspan="2">~üres~</td>
+             </tr>
+             <tr>
+               <td colspan="2">~üres~</td>
+             </tr>
+             <tr>
+               <td colspan="2">~üres~</td>
+             </tr>
+             <tr>
+               <td colspan="2">~üres~</td>
+             </tr>
+             <tr>
+               <td colspan="2">~üres~</td>
+             </tr>
+             <tr>
+               <td colspan="2">~üres~</td>
+             </tr>
+             <tr>
+               <td colspan="2">~üres~</td>
+             </tr>
+             <tr>
+               <td colspan="2">~üres~</td>
+             </tr>
+             <tr>
+               <td colspan="2">~üres~</td>
+             </tr>
+             <tr>
+               <td colspan="2">~üres~</td>
+             </tr>
+           </table>
+          </ul>
+          <button class="tooltip" id="start-button"><span id="▶">Mehet! ▶</span></button>
+          <span class="tooltip-text">Üresen hagyott játékosnév!</span>
+        </div>
+        <!--RIGHT SIDE-->
+        <div class="menu-section" id="menu-right">
+          <ul id="menu-items">
+            <li
+              class="menu-item item-container single no-select"
+              id="game-rules"
+            >
+              Ismertető
+            </li>
+            <li
+              class="menu-item item-container single no-select"
+              id="mode-toggle"
+            >
+              Verseny
+            </li>
+            <li
+              class="menu-item item-container single disabled no-select"
+              id="other-settings"
+            >
+              Egyéb beállítások
+            </li>
+            <ul class="item-container no-select" id="number-of-players">
+              <li class="number-selector menu-item" id="number-selector-title">
+                Játékosszám:
+              </li>
+              <li class="number-selector menu-item" id="number-selector">10</li>
+            </ul>
+          </ul>
+          <ul id="player-list">
+            <li contenteditable="true" class="player-list-element">Játékos1</li>
+            <li contenteditable="true" class="player-list-element">Játékos2</li>
+            <li contenteditable="true" class="player-list-element">Játékos3</li>
+            <li contenteditable="true" class="player-list-element">Játékos4</li>
+            <li contenteditable="true" class="player-list-element">Játékos5</li>
+            <li contenteditable="true" class="player-list-element">Játékos6</li>
+            <li contenteditable="true" class="player-list-element">Játékos7</li>
+            <li contenteditable="true" class="player-list-element">Játékos8</li>
+            <li contenteditable="true" class="player-list-element">Játékos9</li>
+            <li contenteditable="true" class="player-list-element">Játékos10</li>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- TUTORIAL STATE -->
+      <div class="state no-select" id="tutorial-state">
+        <div id="img-content">
+          <img id="tutorial" src="./res/img/game_rules.png" alt="Ismertető a játékhoz">
+        </div>
+        <span title="Vissza a menübe" id="tutorial-exit">X</span>
+      </div>
+      <!-- EXTRA OPTIONS STATE -->
+      <div class="state" id="options-state">
+        <div class="no-select" id="extra-options-section">
+          <h1 id="extra-options-title">Egyéb beállítások</h1>
+          <div id="extra-options">
+            <ul>
+              <li class="top-margin-40">
+                <span class="extra-option-label"
+                  ><strong>Van SET?</strong> gomb megjelenítése </span
+                ><label class="switch-big">
+                  <input id="is-there-set-switch" type="checkbox" />
+                  <span class="slider-big round"></span>
+                </label>
+              </li>
+              <li class="top-margin-40">
+                <span class="extra-option-label"
+                  ><strong>SET mutatása</strong> gomb megjelenítése </span
+                ><label class="switch-big">
+                  <input id="show-set-switch" type="checkbox" />
+                  <span class="slider-big round"></span>
+                </label>
+              </li>
+              <li class="top-margin-40">
+                <span class="extra-option-label"
+                  >automatikus 3 lapos kiegészítés, ha nincs SET </span
+                ><label class="switch-big">
+                  <input id="plus-three-card-switch" type="checkbox" />
+                  <span class="slider-big round"></span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <button class="top-margin-40" id="extra-options-back">Vissza</button>
+        </div>
+      </div>
+      <!-- GAME SCREEN STATE -->
+      <div class="state no-select" id="game-state">
+        <div class="tooltip" id="ingame-set-logo">
+          <img src="res/svg/SET_logo.svg" />
+        </div>
+        <span class="tooltip-text">Még <strong>23</strong> lap van a pakliban.</span>
+        <div id="ingame-text-display">
+          <div class="ingame-text-content text-content-visible"></div>
+          <div id="ingame-time-display">00:00</div>
+        </div>
+        <div id="ingame-buttons">
+          <!--is there set icon-->
+          <svg
+            id="is-there-set-button"
+            class="tooltip ingame-button"
+            width="547"
+            height="785"
+            viewBox="0 0 547 785"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="is_there_set_icon">
+              <rect
+                class="blue-card"
+                x="80"
+                width="467"
+                height="705"
+                rx="50"
+                fill="#387CFF"
+              />
+              <rect
+                class="green-card"
+                x="40"
+                y="40"
+                width="467"
+                height="705"
+                rx="50"
+                fill="#7CFF38"
+              />
+              <rect
+                class="red-card"
+                y="80"
+                width="467"
+                height="705"
+                rx="50"
+                fill="#FF387C"
+              />
+              <path
+                id="question-mark"
+                d="M232.333 478.333C227.444 478.333 223.556 476.667 220.667 473.333C218 470 216.667 465.556 216.667 460C216.667 448.667 218.667 439.222 222.667 431.667C226.889 424.111 233 415.778 241 406.667C247 399.778 251.333 394.111 254 389.667C256.889 385 258.333 379.778 258.333 374C258.333 367.778 256 362.889 251.333 359.333C246.889 355.556 240.778 353.667 233 353.667C225.889 353.667 219.222 355.111 213 358C207 360.889 198.889 365.333 188.667 371.333C182.222 374.889 176.889 376.667 172.667 376.667C168 376.667 164 374.667 160.667 370.667C157.556 366.444 156 361.444 156 355.667C156 351.667 156.667 348.333 158 345.667C159.556 342.778 161.889 340.111 165 337.667C174.778 329.889 186 323.889 198.667 319.667C211.556 315.222 224.444 313 237.333 313C251.111 313 263.444 315.444 274.333 320.333C285.444 325.222 294 332 300 340.667C306.222 349.111 309.333 358.667 309.333 369.333C309.333 377.556 307.667 385.111 304.333 392C301.222 398.667 297.444 404.556 293 409.667C288.556 414.556 282.556 420.667 275 428C266.556 435.778 260.222 442.333 256 447.667C251.778 452.778 249.111 458.556 248 465C247.111 469.222 245.222 472.556 242.333 475C239.667 477.222 236.333 478.333 232.333 478.333ZM233 553C224.778 553 218 550.333 212.667 545C207.333 539.444 204.667 532.556 204.667 524.333C204.667 516.111 207.333 509.333 212.667 504C218 498.444 224.778 495.667 233 495.667C241 495.667 247.667 498.444 253 504C258.333 509.333 261 516.111 261 524.333C261 532.556 258.333 539.444 253 545C247.667 550.333 241 553 233 553Z"
+                fill="#171717"
+              />
+            </g>
+          </svg>
+          <span class="tooltip-text">Van set?</span>
+          <!--plus three icon-->
+          <svg
+            id="plus-three-cards-button"
+            class="tooltip ingame-button"
+            width="547"
+            height="785"
+            viewBox="0 0 547 785"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="plus_three_card">
+              <rect
+                class="blue-card"
+                x="80"
+                width="467"
+                height="705"
+                rx="50"
+                fill="#387CFF"
+              />
+              <rect
+                class="green-card"
+                x="40"
+                y="40"
+                width="467"
+                height="705"
+                rx="50"
+                fill="#7CFF38"
+              />
+              <rect
+                class="red-card"
+                y="80"
+                width="467"
+                height="705"
+                rx="50"
+                fill="#FF387C"
+              />
+              <g id="plus-symbol">
+                <path
+                  d="M214 333C214 321.954 222.954 313 234 313C245.046 313 254 321.954 254 333V533C254 544.046 245.046 553 234 553C222.954 553 214 544.046 214 533V333Z"
+                  fill="#171717"
+                />
+                <path
+                  d="M134 451C122.954 451 114 442.046 114 431C114 419.954 122.954 411 134 411L334 411C345.046 411 354 419.954 354 431C354 442.046 345.046 451 334 451L134 451Z"
+                  fill="#171717"
+                />
+              </g>
+            </g>
+          </svg>
+          <span class="tooltip-text">+3 lap</span>
+          <!--show set icon-->
+          <svg
+            id="show-set-button"
+            class="tooltip ingame-button"
+            width="547"
+            height="785"
+            viewBox="0 0 547 785"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="show_set_icon">
+              <rect
+                class="blue-card"
+                x="80"
+                width="467"
+                height="705"
+                rx="50"
+                fill="#387CFF"
+              />
+              <rect
+                class="green-card"
+                x="40"
+                y="40"
+                width="467"
+                height="705"
+                rx="50"
+                fill="#7CFF38"
+              />
+              <rect
+                class="red-card"
+                y="80"
+                width="467"
+                height="705"
+                rx="50"
+                fill="#FF387C"
+              />
+              <path
+                id="eye-icon"
+                d="M234.348 313C154.19 313 85.7347 362.76 58 433C85.7347 503.24 154.19 553 234.348 553C314.506 553 382.961 503.24 410.696 433C382.961 362.76 314.506 313 234.348 313ZM234.348 513C190.101 513 154.19 477.16 154.19 433C154.19 388.84 190.101 353 234.348 353C278.595 353 314.506 388.84 314.506 433C314.506 477.16 278.595 513 234.348 513ZM234.348 385C207.735 385 186.253 406.44 186.253 433C186.253 459.56 207.735 481 234.348 481C260.96 481 282.443 459.56 282.443 433C282.443 406.44 260.96 385 234.348 385Z"
+                fill="#171717"
+              />
+            </g>
+          </svg>
+          <span class="tooltip-text">SET mutatása</span>
+        </div>
+        <div id="ingame-player-list">
+          <ul>
+            <li>
+              <span class="circle">9</span
+              ><span class="ingame-player-name">Játékos1</span>
+            </li>
+            <li>
+              <span class="circle orange">0</span
+              ><span class="ingame-player-name">Játékos1</span>
+            </li>
+            <li>
+              <span class="circle red">2</span
+              ><span class="ingame-player-name">Játékos1</span>
+            </li>
+            <li>
+              <span class="circle magenta">6</span
+              ><span class="ingame-player-name">Játékos1</span>
+            </li>
+            <li>
+              <span class="circle purple">9</span
+              ><span class="ingame-player-name">Játékos1</span>
+            </li>
+            <li>
+              <span class="circle dark-blue">2</span
+              ><span class="ingame-player-name">Játékos1</span>
+            </li>
+            <li>
+              <span class="circle aqua">5</span
+              ><span class="ingame-player-name">Játékos1</span>
+            </li>
+            <li>
+              <span class="circle grey"></span
+              ><span class="ingame-player-name">Játékos1</span>
+            </li>
+            <li>
+              <span class="circle grey"></span
+              ><span class="ingame-player-name">Játékos1</span>
+            </li>
+            <li>
+              <span class="circle grey"></span
+              ><span class="ingame-player-name">Játékos1</span>
+            </li>
+          </ul>
+        </div>
+        <div id="ingame-gamearea">
+          <div id="card-1-1" class="ingame-card"></div>
+          <div id="card-1-2" class="ingame-card"></div>
+          <div id="card-1-3" class="ingame-card"></div>
+          <div id="card-1-4" class="ingame-card"></div>
+          <div id="card-1-5" class="ingame-card-placeholder"></div>
+          <div id="card-2-1" class="ingame-card"></div>
+          <div id="card-2-2" class="ingame-card"></div>
+          <div id="card-2-3" class="ingame-card"></div>
+          <div id="card-2-4" class="ingame-card"></div>
+          <div id="card-2-5" class="ingame-card-placeholder"></div>
+          <div id="card-3-1" class="ingame-card"></div>
+          <div id="card-3-2" class="ingame-card"></div>
+          <div id="card-3-3" class="ingame-card"></div>
+          <div id="card-3-4" class="ingame-card"></div>
+          <div id="card-3-5" class="ingame-card-placeholder"></div>
+        </div>
+      </div>
+      <!-- LOADING SCREEN STATE -->
+      <div class="state no-select" id="loading-state">
+        <img src="./res/img/loading-gif.gif" alt="betöltő animáció">
+      </div>
+      <!-- GAME OVER SCREEN -->
+      <div class="state no-select" id="end-state" hidden>
+        <div id="game-over-content">
+          <h1>Nincs több SET!</h1>
+          <h2>vége a játéknak 😯</h2>
+          <ul>
+            <li class="spent-time-text">Eltelt idő:</li>
+            <li class="spent-time-text" id="game-over-time-spent">00:00</li>
+          <li>
+            <h2 id="game-over-results-header">eredmény</h2>
+            <div id="table-container">
+              <table id="player-scores-table">
+                <thead>
+                  <td>Név</td><td>Pontszám</td>
+                </thead>
+                <tbody>
+                 <tr>
+                   <td>Játékos 1</td>
+                   <td>20</td>
+                 </tr>
+                 <tr>
+                   <td>Játékos 2</td>
+                   <td>20</td>
+                 </tr>
+                 <tr>
+                   <td>Játékos 3</td>
+                   <td>20</td>
+                 </tr>
+                 <tr>
+                   <td>Játékos 4</td>
+                   <td>20</td>
+                 </tr>
+                 <tr>
+                   <td>Játékos 5</td>
+                   <td>20</td>
+                 </tr>
+                 <tr>
+                   <td>Játékos 6</td>
+                   <td>20</td>
+                 </tr>
+                 <tr>
+                   <td>Játékos 7</td>
+                   <td>20</td>
+                 </tr>
+                 <tr>
+                   <td>Játékos 8</td>
+                   <td>20</td>
+                 </tr>
+                 <tr>
+                   <td>Játékos 9</td>
+                   <td>20</td>
+                 </tr>
+                 <tr>
+                   <td>Játékos 10</td>
+                   <td>20</td>
+                 </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          </ul>
+          <ul id="endscreen-buttons">
+            <li class="endscreen-button" id="game-over-menu-button">Menü</li>
+            <li class="endscreen-button" id="game-over-restart-button">Visszavágó</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <small class="no-select">Készítette: Vikor Bogdán Vitold<br>©vitek</small>
+  </body>
+  <!-- JS fájlok -->
+  <script src="res/scripts/slidercheckbox.js"></script>
+  <script src="res/scripts/variables.js"></script>
+  <script src="res/scripts/constants.js"></script>
+  <script src="res/scripts/menu.js"></script>
+  <script src="res/scripts/game.js"></script>
+  <script src="res/scripts/utilities.js"></script>
+  <script src="res/scripts/gameover.js"></script>
+
+  <!--Utoljára a script.js töltsön be-->
+  <script src="res/scripts/script.js"></script>
+</html>

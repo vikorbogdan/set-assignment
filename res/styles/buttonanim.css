@@ -1,0 +1,140 @@
+.ingame-button:hover {
+  cursor: pointer;
+}
+.ingame-button:hover {
+  opacity: 0.9;
+}
+
+/*For JS settings*/
+.ingame-button-disabled {
+  opacity: 0.3;
+}
+
+.ingame-button .red-card {
+  animation: upper-right-transform-reversed 0.15s ease-out forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.ingame-button:active .red-card {
+  animation: upper-right-transform 0.15s ease-out forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.ingame-button .blue-card {
+  animation: bottom-left-transform-reversed 0.15s ease-out forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.ingame-button:active .blue-card {
+  animation: bottom-left-transform 0.15s ease-out forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.ingame-button #eye-icon {
+  animation: upper-right-transform-reversed 0.15s ease-out forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.ingame-button:active #eye-icon {
+  animation: upper-right-transform 0.15s ease-out forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.ingame-button #question-mark {
+  animation: upper-right-transform-reversed 0.15s ease-out forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.ingame-button:active #question-mark {
+  animation: upper-right-transform 0.15s ease-out forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.ingame-button #plus-symbol {
+  animation: upper-right-transform-reversed 0.15s ease-out forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.ingame-button:active #plus-symbol {
+  animation: upper-right-transform 0.15s ease-out forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+/* KEYFRAMES */
+@keyframes upper-right-transform {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    transform: translateX(20px) translateY(-20px);
+  }
+}
+@keyframes upper-right-transform-reversed {
+  from {
+    transform: translateX(20px) translateY(-20px);
+  }
+  to {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes bottom-left-transform {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    transform: translateX(-20px) translateY(20px);
+  }
+}
+
+@keyframes bottom-left-transform-reversed {
+  from {
+    transform: translateX(-20px) translateY(20px);
+  }
+  to {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes redout {
+  from {
+    transform: translateY(-7.33px) translateX(7.33px);
+  }
+  to {
+    transform: translateY(0) translateX(0);
+  }
+}
+@keyframes redin {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(-7.33px) translateX(7.33px);
+  }
+}
+
+@keyframes blueout {
+  from {
+    transform: translateY(7.33px) translateX(-7.33px);
+  }
+  to {
+    transform: translateY(0) translateX(0);
+  }
+}
+@keyframes bluein {
+  from {
+    transform: translateY(0%) translateX(0%);
+  }
+  to {
+    transform: translateY(7.33px) translateX(-7.33px);
+  }
+}

@@ -1,0 +1,86 @@
+/*INGAME GOMBOK*/
+
+.tooltip.ingame-button {
+  display: inline-block;
+}
+
+.tooltip.ingame-button + .tooltip-text {
+  font-weight: normal;
+  visibility: hidden;
+  width: auto;
+  background-color: #515151;
+  color: #fdfdfd;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 145px;
+  margin-left: 0;
+}
+.tooltip.ingame-button-disabled + .tooltip-text,
+.tooltip.ingame-button-disabled:hover + .tooltip-text {
+  visibility: hidden;
+  position: absolute;
+}
+
+.tooltip.ingame-button:hover + .tooltip-text {
+  visibility: visible;
+}
+
+/*START GOMB*/
+
+#start-button.tooltip.disabled {
+  display: inline-block;
+  position: relative;
+}
+
+#start-button.tooltip.disabled + .tooltip-text {
+  font-weight: normal;
+  visibility: hidden;
+  width: auto;
+  background-color: #515151ab;
+  color: #fdfdfd;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 697px;
+  margin-left: -195px;
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+#start-button.tooltip + .tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+#start-button.tooltip.disabled + .tooltip-text {
+  visibility: visible;
+}
+
+/*SET LOGO*/
+
+#ingame-set-logo.tooltip + .tooltip-text {
+  font-weight: normal;
+  display: none;
+  width: auto;
+  background-color: #515151;
+  color: #fdfdfd;
+  text-align: center;
+  padding: 3px 5px;
+  border-radius: 6px;
+  font-size: 0.7em;
+  opacity: 0.8;
+
+  position: absolute;
+  z-index: 1;
+  top: 132px;
+  margin-left: 12px;
+}
+
+#ingame-set-logo.tooltip:hover + .tooltip-text {
+  display: block;
+}

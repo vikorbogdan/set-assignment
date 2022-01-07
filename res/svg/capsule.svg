@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.64 51.08">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <title>Eszköz 1</title>
+  <g id="Réteg_2" data-name="Réteg 2">
+    <g id="Réteg_1" data-name="Réteg 1">
+      <g id="Réteg_2-2" data-name="Réteg 2-2">
+        <path class="cls-1" d="M107.14,25.58a25,25,0,0,1-25,25H25.54A25,25,0,0,1,25.54.5H82.11a25,25,0,0,1,25,25Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

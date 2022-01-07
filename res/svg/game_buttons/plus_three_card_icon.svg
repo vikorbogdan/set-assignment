@@ -1,0 +1,11 @@
+<svg width="547" height="785" viewBox="0 0 547 785" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="plus_three_card">
+<rect id="blue" x="80" width="467" height="705" rx="50" fill="#387CFF"/>
+<rect id="green" x="40" y="40" width="467" height="705" rx="50" fill="#7CFF38"/>
+<rect id="red" y="80" width="467" height="705" rx="50" fill="#FF387C"/>
+<g id="plus-symbol">
+<path d="M214 333C214 321.954 222.954 313 234 313C245.046 313 254 321.954 254 333V533C254 544.046 245.046 553 234 553C222.954 553 214 544.046 214 533V333Z" fill="#171717"/>
+<path d="M134 451C122.954 451 114 442.046 114 431C114 419.954 122.954 411 134 411L334 411C345.046 411 354 419.954 354 431C354 442.046 345.046 451 334 451L134 451Z" fill="#171717"/>
+</g>
+</g>
+</svg>
