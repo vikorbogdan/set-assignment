@@ -1,6 +1,7 @@
 # ELTE FI Webprogramming JS Assignment
 
 ⚠ This was one of my earliest Javascript projects, completed in 2020.
+
 🇭🇺 The language used in this project is Hungarian.
 
 ### [Demo](http://webprogramozas.inf.elte.hu/hallgatok/orwht4/set_card_game/)
@@ -9,6 +10,7 @@
 
 This project was an assignment at the end of the semester.
 The aim was to implement this game according to a set of rules.
+
 To learn more about these rules read the section [Pontozás](https://github.com/vikorbogdan/set-assignment#scoring) (Hungarian)
 
 ## Scoring
@@ -53,6 +55,6 @@ Plusz feladatok (plusz 5 pont)
 - [x] A játék eredménye elmentődik a böngészőbe lokálisan. (0,5 pont)
 - [x] A játék nyitólapján az 1 játékos mód 3 tulajdonságnál játszott top listája megjelenik (0,5 pont)
 - [x] A játék nyitólapján az 1 játékos mód 4 tulajdonságnál játszott top listája megjelenik (0,5 pont)
-- [ ] A játék nyitólapján az utolsó 10 többjátékos mód eredményei megjelennek. (0,5 pont)
+- [x] A játék nyitólapján az utolsó 10 többjátékos mód eredményei megjelennek. (0,5 pont)
 - [x] Játék végén új játék az adott játékosokkal (1 pont)
 - [x] Játék közben és végén a pontszám megjelenítése (aktuális/összesített) (0,5 pont)
