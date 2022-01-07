@@ -3,6 +3,8 @@
 ⚠ This was one of my earliest Javascript projects, completed in 2020.
 🇭🇺 The language used in this project is Hungarian.
 
+### [Demo](http://webprogramozas.inf.elte.hu/hallgatok/orwht4/set_card_game/)
+
 ## About
 
 This project was an assigment at the end of the semester.
