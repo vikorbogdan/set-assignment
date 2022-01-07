@@ -7,7 +7,7 @@
 
 ## About
 
-This project was an assigment at the end of the semester.
+This project was an assignment at the end of the semester.
 The aim was to implement this game according to a set of rules.
 To learn more about these rules read the section [Pontozás](https://github.com/vikorbogdan/set-assignment#scoring) (Hungarian)
 
